@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ruby | Ben Woodall]]></title>
+  <link href="http://benwoody.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://benwoody.github.com/"/>
+  <updated>2015-03-20T08:20:54-07:00</updated>
+  <id>http://benwoody.github.com/</id>
+  <author>
+    <name><![CDATA[Ben Woodall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Ruby 2.0.0-rc2 on OSX]]></title>
+    <link href="http://benwoody.github.com/blog/2013/02/12/installing-ruby-2-dot-0-0-rc2-on-osx/"/>
+    <updated>2013-02-12T16:35:00-08:00</updated>
+    <id>http://benwoody.github.com/blog/2013/02/12/installing-ruby-2-dot-0-0-rc2-on-osx</id>
+    <content type="html"><![CDATA[<p>This took me WAY too long to figure out, but it seems like a LOT of people have trouble installing ruby-2.0.0 on OSX.</p>
+
+<!-- more -->
+
+
+<p>I assumed installing 2.0.0-rc2 would be easy using rbenv:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rbenv install 2.0.0-rc2
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>But it didn&rsquo;t turn out that easy:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Downloading openssl-1.0.1e.tar.gz&amp;hellip;
+</span><span class='line'>&amp;ndash;&gt; &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://www.openssl.org/source/openssl-1.0.1e.tar.gz&quot;</span>&gt;https://www.openssl.org/source/openssl-1.0.1e.tar.gz&lt;/a&gt;
+</span><span class='line'>Installing openssl-1.0.1e&amp;hellip;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;BUILD FAILED&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Inspect or clean up the working tree at /var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481
+</span><span class='line'>Results logged to /var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481.log&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Last 10 log lines:
+</span><span class='line'>x openssl-1.0.1e/VMS/TODO
+</span><span class='line'>x openssl-1.0.1e/VMS/ucx_shr_decc_log.opt
+</span><span class='line'>x openssl-1.0.1e/VMS/ucx_shr_decc.opt
+</span><span class='line'>x openssl-1.0.1e/VMS/ucx_shr_vaxc.opt
+</span><span class='line'>x openssl-1.0.1e/VMS/VMSify-conf.pl
+</span><span class='line'>x openssl-1.0.1e/VMS/WISHLIST.TXT
+</span><span class='line'>/var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481/openssl-1.0.1e /var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481 ~
+</span><span class='line'>Operating system: i686-apple-darwinDarwin Kernel Version 12.2.0: Sat Aug 25 00:48:52 PDT 2012; root:xnu-2050.18.24~1/RELEASE_X86_64
+</span><span class='line'>Configuring <span class="k">for </span>darwin64-x86_64-cc
+</span><span class='line'>Usage: Configure <span class="o">[</span>no-&lt;cipher&gt; &amp;hellip;<span class="o">]</span> <span class="o">[</span><span class="nb">enable</span>-&lt;cipher&gt; &amp;hellip;<span class="o">]</span> <span class="o">[</span>experimental-&lt;cipher&gt; &amp;hellip;<span class="o">]</span> <span class="o">[</span>-Dxxx<span class="o">]</span> <span class="o">[</span>-lxxx<span class="o">]</span> <span class="o">[</span>-Lxxx<span class="o">]</span> <span class="o">[</span>-fxxx<span class="o">]</span> <span class="o">[</span>-Kxxx<span class="o">]</span> <span class="o">[</span>no-hw-xxx|no-hw<span class="o">]</span> <span class="o">[[</span>no-<span class="o">]</span>threads<span class="o">]</span> <span class="o">[[</span>no-<span class="o">]</span>shared<span class="o">]</span> <span class="o">[[</span>no-<span class="o">]</span>zlib|zlib-dynamic<span class="o">]</span> <span class="o">[</span>no-asm<span class="o">]</span> <span class="o">[</span>no-dso<span class="o">]</span> <span class="o">[</span>no-krb5<span class="o">]</span> <span class="o">[</span>sctp<span class="o">]</span> <span class="o">[</span>386<span class="o">]</span> <span class="o">[</span>&amp;mdash;prefix<span class="o">=</span>DIR<span class="o">]</span> <span class="o">[</span>&amp;mdash;openssldir<span class="o">=</span>OPENSSLDIR<span class="o">]</span> <span class="o">[</span>&amp;mdash;with-xxx<span class="o">[=</span>vvv<span class="o">]]</span> <span class="o">[</span>&amp;mdash;test-sanity<span class="o">]</span> os/compiler<span class="o">[</span>:flags<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Some googleing turned up this issue for rbenv, <a href="https://github.com/sstephenson/ruby-build/issues/288">https://github.com/sstephenson/ruby-build/issues/288</a>, which shows the issue being a problem with version of OpenSSL installed on Mountain Lion.</p>
+
+<p>So I tried the suggested
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RUBY_CONFIGURE_OPTS=&mdash;with-openssl-dir=&lt;code>brew --prefix openssl&lt;/code> rbenv install 2.0.0-rc2</span></code></pre></td></tr></table></div></figure></notextile></div>
+AND
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CONFIGURE_OPTS=&mdash;with-openssl-dir=&lt;code>brew --prefix openssl&lt;/code> rbenv install 2.0.0-rc2</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>AFTER I had used brew to install/upgrade the newest version of OpenSSL.  NOTHING WORKED.  SAME ERROR.</p>
+
+<p>Problem?  It seemed to be an issue with the most current version of rbenv/ruby-build used with brew.  So I had to uninstall both from brew and use the git-clone method instead, giving me the newest version.</p>
+
+<p>Installing with <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RUBY_CONFIGURE_OPTS=&mdash;with-openssl-dir=&lt;code>brew --prefix openssl&lt;/code> rbenv install 2.0.0-rc2</span></code></pre></td></tr></table></div></figure></notextile></div>
+worked just fine after that.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pry Easter Eggs]]></title>
+    <link href="http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs/"/>
+    <updated>2012-12-13T12:09:00-08:00</updated>
+    <id>http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs</id>
+    <content type="html"><![CDATA[<p>I was playing around in the Pry source code and found a mountain of fun stuffs!</p>
+
+<!-- more -->
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">cohen</span><span class="o">-</span><span class="n">poem</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;&amp;mdash;</span>
+</span><span class='line'><span class="sr">When this American woman,</span>
+</span><span class='line'><span class="sr">whose thighs are bound in casual red cloth,</span>
+</span><span class='line'><span class="sr">comes thundering past my sitting place</span>
+</span><span class='line'><span class="sr">like a forest-burning Mongol tribe,</span>
+</span><span class='line'><span class="sr">the city is ravished</span>
+</span><span class='line'><span class="sr">and brittle buildings of a hundred years</span>
+</span><span class='line'><span class="sr">splash into the street;</span>
+</span><span class='line'><span class="sr">and my eyes are burnt</span>
+</span><span class='line'><span class="sr">for the embroidered Chinese girls,</span>
+</span><span class='line'><span class="sr">already old,</span>
+</span><span class='line'><span class="sr">and so small between the thin pines</span>
+</span><span class='line'><span class="sr">on these enormous landscapes,</span>
+</span><span class='line'><span class="sr">that if you turn your head</span>
+</span><span class='line'><span class="sr">they are lost for hours.&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>              <span class="o">--</span> <span class="no">Leonard</span> <span class="no">Cohen</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">east</span><span class="o">-</span><span class="n">coker</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;&amp;mdash;</span>
+</span><span class='line'><span class="sr">Now the light falls</span>
+</span><span class='line'><span class="sr">Across the open field, leaving the deep lane</span>
+</span><span class='line'><span class="sr">Shuttered with branches, dark in the afternoon,</span>
+</span><span class='line'><span class="sr">Where you lean against a bank while a van passes,</span>
+</span><span class='line'><span class="sr">And the deep lane insists on the direction</span>
+</span><span class='line'><span class="sr">Into the village, in the electric heat</span>
+</span><span class='line'><span class="sr">Hypnotised. In a warm haze the sultry light</span>
+</span><span class='line'><span class="sr">Is absorbed, not refracted, by grey stone.</span>
+</span><span class='line'><span class="sr">The dahlias sleep in the empty silence.</span>
+</span><span class='line'><span class="sr">Wait for the early owl.</span>
+</span><span class='line'><span class="sr">&amp;mdash; T.S Eliot</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">get</span><span class="o">-</span><span class="n">naked</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;&amp;mdash;</span>
+</span><span class='line'><span class="sr">We dont have to take our clothes off to have a good time.</span>
+</span><span class='line'><span class="sr">We could dance &amp;amp; party all night And drink some cherry wine.</span>
+</span><span class='line'><span class="sr">&amp;mdash; Jermaine Stewart</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+and my favorite:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">nyan</span><span class="o">-</span><span class="n">cat</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OSX Rspec Autotest Notifications]]></title>
+    <link href="http://benwoody.github.com/blog/2012/12/04/osx-rspec-autotest-notifications/"/>
+    <updated>2012-12-04T09:57:00-08:00</updated>
+    <id>http://benwoody.github.com/blog/2012/12/04/osx-rspec-autotest-notifications</id>
+    <content type="html"><![CDATA[<p>This uses growl notifications to alert you to your autotest status</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Autotest::Growl</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">growl</span> <span class="n">title</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">pri</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stick</span><span class="o">=&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;system &quot;growlnotify -n autotest --image </span><span class="si">#{</span><span class="n">img</span><span class="si">}</span><span class="sr"> -p </span><span class="si">#{</span><span class="n">pri</span><span class="si">}</span><span class="sr"> -m </span><span class="si">#{</span><span class="n">msg</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="sr"> </span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="sr"> </span><span class="si">#{</span><span class="n">stick</span><span class="si">}</span><span class="sr">&quot;</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="no">Autotest</span><span class="o">.</span><span class="n">add_hook</span> <span class="ss">:ran_command</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;results = [at.results].flatten.join(&quot;\n&quot;)</span>
+</span><span class='line'><span class="sr">output = results.slice(/</span><span class="p">(\</span><span class="n">d</span><span class="o">+</span><span class="p">)\</span><span class="n">s</span><span class="o">+</span><span class="n">examples?</span><span class="p">,\</span><span class="n">s</span><span class="o">*</span><span class="p">(\</span><span class="n">d</span><span class="o">+</span><span class="p">)\</span><span class="n">s</span><span class="o">+</span><span class="n">failures?</span><span class="p">(,\</span><span class="n">s</span><span class="o">*</span><span class="p">(\</span><span class="n">d</span><span class="o">+</span><span class="p">)\</span><span class="n">s</span><span class="o">+</span><span class="n">pending</span><span class="p">)</span><span class="sc">?/</span><span class="p">)</span>
+</span><span class='line'><span class="k">if</span> <span class="n">output</span> <span class="o">=~</span> <span class="sr">/[1-9]\sfailures?/</span>
+</span><span class='line'>  <span class="n">growl</span> <span class="s2">&quot;Test Results&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;~/Dropbox/Photos/autotest/rails_fail.png&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="c1">#, &quot;-s&quot;</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>  <span class="n">growl</span> <span class="s2">&quot;Test Results&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;~/Dropbox/Photos/autotest/rails_ok.png&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

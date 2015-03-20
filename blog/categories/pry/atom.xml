@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pry | Ben Woodall]]></title>
+  <link href="http://benwoody.github.com/blog/categories/pry/atom.xml" rel="self"/>
+  <link href="http://benwoody.github.com/"/>
+  <updated>2015-03-20T08:20:54-07:00</updated>
+  <id>http://benwoody.github.com/</id>
+  <author>
+    <name><![CDATA[Ben Woodall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pry Easter Eggs]]></title>
+    <link href="http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs/"/>
+    <updated>2012-12-13T12:09:00-08:00</updated>
+    <id>http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs</id>
+    <content type="html"><![CDATA[<p>I was playing around in the Pry source code and found a mountain of fun stuffs!</p>
+
+<!-- more -->
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">cohen</span><span class="o">-</span><span class="n">poem</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;&amp;mdash;</span>
+</span><span class='line'><span class="sr">When this American woman,</span>
+</span><span class='line'><span class="sr">whose thighs are bound in casual red cloth,</span>
+</span><span class='line'><span class="sr">comes thundering past my sitting place</span>
+</span><span class='line'><span class="sr">like a forest-burning Mongol tribe,</span>
+</span><span class='line'><span class="sr">the city is ravished</span>
+</span><span class='line'><span class="sr">and brittle buildings of a hundred years</span>
+</span><span class='line'><span class="sr">splash into the street;</span>
+</span><span class='line'><span class="sr">and my eyes are burnt</span>
+</span><span class='line'><span class="sr">for the embroidered Chinese girls,</span>
+</span><span class='line'><span class="sr">already old,</span>
+</span><span class='line'><span class="sr">and so small between the thin pines</span>
+</span><span class='line'><span class="sr">on these enormous landscapes,</span>
+</span><span class='line'><span class="sr">that if you turn your head</span>
+</span><span class='line'><span class="sr">they are lost for hours.&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>              <span class="o">--</span> <span class="no">Leonard</span> <span class="no">Cohen</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">east</span><span class="o">-</span><span class="n">coker</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;&amp;mdash;</span>
+</span><span class='line'><span class="sr">Now the light falls</span>
+</span><span class='line'><span class="sr">Across the open field, leaving the deep lane</span>
+</span><span class='line'><span class="sr">Shuttered with branches, dark in the afternoon,</span>
+</span><span class='line'><span class="sr">Where you lean against a bank while a van passes,</span>
+</span><span class='line'><span class="sr">And the deep lane insists on the direction</span>
+</span><span class='line'><span class="sr">Into the village, in the electric heat</span>
+</span><span class='line'><span class="sr">Hypnotised. In a warm haze the sultry light</span>
+</span><span class='line'><span class="sr">Is absorbed, not refracted, by grey stone.</span>
+</span><span class='line'><span class="sr">The dahlias sleep in the empty silence.</span>
+</span><span class='line'><span class="sr">Wait for the early owl.</span>
+</span><span class='line'><span class="sr">&amp;mdash; T.S Eliot</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">get</span><span class="o">-</span><span class="n">naked</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;&amp;mdash;</span>
+</span><span class='line'><span class="sr">We dont have to take our clothes off to have a good time.</span>
+</span><span class='line'><span class="sr">We could dance &amp;amp; party all night And drink some cherry wine.</span>
+</span><span class='line'><span class="sr">&amp;mdash; Jermaine Stewart</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+and my favorite:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">nyan</span><span class="o">-</span><span class="n">cat</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

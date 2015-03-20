@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Go | Ben Woodall]]></title>
+  <link href="http://benwoody.github.com/blog/categories/go/atom.xml" rel="self"/>
+  <link href="http://benwoody.github.com/"/>
+  <updated>2015-03-20T08:20:54-07:00</updated>
+  <id>http://benwoody.github.com/</id>
+  <author>
+    <name><![CDATA[Ben Woodall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Go Learn]]></title>
+    <link href="http://benwoody.github.com/blog/2013/06/18/go-learn/"/>
+    <updated>2013-06-18T20:01:00-07:00</updated>
+    <id>http://benwoody.github.com/blog/2013/06/18/go-learn</id>
+    <content type="html"><![CDATA[<p><img class="right <a" src="href="http://i.imgur.com/TZ3vvrP.png">http://i.imgur.com/TZ3vvrP.png</a>"></p>
+
+<p>I&rsquo;ve recently decided to pick up learning the Go programming language.  Why Go?  I don&rsquo;t remember why.  But I think I was interested in beefing up backend services for some of the webapps I deploy.  Plus, the Gopher is kinda cool.  Also, the language itself is very easy to read in a Ruby type way.</p>
+
+<p>The one pain in the ass thing about Go is that, as of now, the resources for learning it are few and far between.  So I figured, &ldquo;Hey, why don&rsquo;t I just write about the things I&rsquo;m learning?&rdquo;  So, hey, I&rsquo;m doing that.</p>
+
+<!-- more -->
+
+
+<p>I&rsquo;ve started a repository on github, <a href="https://github.com/benwoody/go_learn">benwoody/go_learn</a>.  There, I plan on adding the code example I will be writing about in this very blog!</p>
+
+<p>So as a first post on my Go learning journey, I present to you a list of Go learning resources!</p>
+
+<ul>
+<li>go_learn resources: <a href="https://github.com/benwoody/go_learn/blob/master/resources.markdown">https://github.com/benwoody/go_learn/blob/master/resources.markdown</a></li>
+<li>My GoLang Pinboard tags: <a href="https://pinboard.in/u:benwoodall/t:GoLang">https://pinboard.in/u:benwoodall/t:GoLang</a></li>
+</ul>
+
+
+<p>The end result of this is to show my progression of starting at the beginning (Hello, world!), all the way up to more advanced Go topics&hellip; whatever those may be.</p>
+]]></content>
+  </entry>
+  
+</feed>

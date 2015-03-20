@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | Ben Woodall]]></title>
+  <link href="http://benwoody.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://benwoody.github.com/"/>
+  <updated>2015-03-20T08:20:54-07:00</updated>
+  <id>http://benwoody.github.com/</id>
+  <author>
+    <name><![CDATA[Ben Woodall]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setup for Remote Pairing]]></title>
+    <link href="http://benwoody.github.com/blog/2013/05/24/setup-for-remote-pairing/"/>
+    <updated>2013-05-24T11:55:00-07:00</updated>
+    <id>http://benwoody.github.com/blog/2013/05/24/setup-for-remote-pairing</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been trying to get into the swing of things with pair programming lately. <a href="https://twitter.com/search?q=%23pairwithme">#pairwithme</a> has been blowing up on Twitter, so buddying up with a fellow dev to learn(or teach) a thing or two is pretty easy.</p>
+
+<p>I&rsquo;ve seen a lot of different posts on how to get going with pair programming.  Many of them suggest having another person ssh in to your computer and have at it.  I like to keep remote work separate though AND I just happen to have a VPS for just such a thing.  So let&rsquo;s set up remote pair programming!</p>
+
+<!-- more -->
+
+
+<p>On your remote machine, create a new passwordless user:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> <span class="nv">$ </span>sudo adduser &amp;mdash;disabled-password pair
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This will create a new user with no password on your machine.  We&rsquo;re not going to be needing a password because users will be logging in with their ssh keys.</p>
+
+<p>When I first set this up, I was keeping track of my friends keys and adding them to the pair users .ssh, but that got really old, really quick. Luckily, there&rsquo;s an app for that!  Or a gem really&hellip;</p>
+
+<p>Hopefully you have ruby installed on your remote machine. Now, depending on how you have your environment setup and where you have your ruby gems installed, you&rsquo;ll need to make sure the pair user has permissions to install gems and use them locally. It does? Awesome, let&rsquo;s keep going.</p>
+
+<p>Install Chris Hunts awesome <a href="https://github.com/chrishunt/github-auth">github-auth</a> gem.  This will let us grab a users SSH keys from Github and add them to your authorized_keys.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> <span class="nv">$ </span>gem install github-auth
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>To add or remote a user to pair with:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> <span class="nv">$ </span>gh-auth add benwoody
+</span><span class='line'>Adding 2 key<span class="o">(</span>s<span class="o">)</span> to &amp;lsquo;/home/pair/.ssh/authorized_keys&amp;rsquo;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt; <span class="nv">$ </span>gh-auth remove benwoody
+</span><span class='line'>Removing 1 key<span class="o">(</span>s<span class="o">)</span> to &amp;lsquo;/home/pair/.ssh/authorized_keys&amp;rsquo;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>To get this going, add yourself to the authorized_keys and then add your friend.</p>
+
+<p>Then, both of you can simply
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'> <span class="nv">$ </span>ssh &lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;&amp;#x6d;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#x74;&amp;#x6f;&amp;#58;&amp;#x70;&amp;#97;&amp;#105;&amp;#x72;&amp;#x40;&amp;#109;&amp;#x79;&amp;#104;&amp;#x6f;&amp;#115;&amp;#x74;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&quot;</span>&gt;&amp;#112;&amp;#97;&amp;#105;&amp;#114;&amp;#64;&amp;#x6d;&amp;#x79;&amp;#104;&amp;#x6f;&amp;#115;&amp;#116;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>and BAM you got some pairin' goin' on!*</p>
+
+<p>When you&rsquo;re done, just remove their access!**</p>
+
+<p>* I&rsquo;ll probably write up a nice post on how I have my pair environment set up at a later date.</p>
+
+<p>** Note that this setup means you have some sort of trust with the person you are pairing with. This probably isn&rsquo;t the BEST security practice.  Optionally, you could add the pair user to a group with limited access.</p>
+]]></content>
+  </entry>
+  
+</feed>
