@@ -3,7 +3,7 @@
   <title><![CDATA[Ben Woodall]]></title>
   <link href="http://benwoody.github.com/atom.xml" rel="self"/>
   <link href="http://benwoody.github.com/"/>
-  <updated>2015-03-20T08:20:54-07:00</updated>
+  <updated>2015-03-24T15:12:10-07:00</updated>
   <id>http://benwoody.github.com/</id>
   <author>
     <name><![CDATA[Ben Woodall]]></name>
@@ -11,6 +11,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Copying and Pasting between OS X and Vim]]></title>
+    <link href="http://benwoody.github.com/blog/2015/03/24/copying-and-pasting-between-os-x-and-vim/"/>
+    <updated>2015-03-24T13:28:00-07:00</updated>
+    <id>http://benwoody.github.com/blog/2015/03/24/copying-and-pasting-between-os-x-and-vim</id>
+    <content type="html"><![CDATA[<p>Copying and pasting between the clipboard and vim has always been a nightmare for me.  You find a big chunk of code you want to copy over to your project, tab over to vim, get into insert mode, and hit Command + v.  What do you get?  A big wall of text that has every line tabbed over.  Definitely not the format you were trying to copy over.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">((</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.alert&quot;</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+</span><span class='line'>            <span class="p">});</span>
+</span><span class='line'>                <span class="p">}),</span> <span class="mi">4000</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+
+<p>The easiest fix for this is to set the paste mode before you head into insert the code:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:set paste</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You&rsquo;ll notice the statusline shows you in <code>PASTE</code> mode and the tooltip shows <code>-- INSERT (paste) --</code>.  Paste in your code and things should be good.  When you&rsquo;re done, revert back with:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:set nopaste</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Another option is to set your pastetoggle key.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:set pastetoggle=&lt;F2></span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above code will set the F2 key to toggle between paste and nopaste.</p>
+
+<p>What I <em>REALLY</em> want is a way to yy and pp from my system clipboard and have it work in vim.  One large problem with this is that the methods that OS X uses to go to and from the clipboard (pbcopy and pbpaste) break when you work in tmux sessions.</p>
+
+<p>To fix this, we need to install <code>reattach-to-user-namespace</code> from <a href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard">ChrisJohnsen/tmux-MacOSX-pasteboard</a>.  We can install this threw brew:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install reattach-to-user-namespace</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and in our .vimrc, add the following line:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set clipboard=unnamed</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, anything you yank from vim is available in the clipboard, and anything in the clipboard is available to paste in vim!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Validating REST queries with Rails]]></title>
