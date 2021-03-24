@@ -87,7 +87,7 @@
   
 </span>
 
-
+<div data-showcase-id="6acec641-1364-44db-9149-36b5c4da8061" id="companycam-showcase-root"></div>
 <div class="entry-content"><p>Copying and pasting between the clipboard and vim has always been a nightmare for me.  You find a big chunk of code you want to copy over to your project, tab over to vim, get into insert mode, and hit Command + v.  What do you get?  A big wall of text that has every line tabbed over.  Definitely not the format you were trying to copy over.</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -293,5 +293,7 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="/javascripts/aharris.js"></script>
 
+  <script> (function () {  var ccShowcaseRoot = document.getElementById("companycam-showcase-root");  if (!ccShowcaseRoot.attachShadow || !window.fetch) { return; }  var ccShowcaseRootParent = document.getElementsByTagName("body")[0];  var ccShowcaseScript = document.createElement("script");  ccShowcaseScript.src = 'https://showcase.companycam.com/bundle.js';  ccShowcaseScript.type = "text/javascript";  ccShowcaseRootParent.appendChild(ccShowcaseScript); })();</script>
+  
 </body>
 </html>
