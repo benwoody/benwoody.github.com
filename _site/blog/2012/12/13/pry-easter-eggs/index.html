@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Pry Easter Eggs - Ben Woodall</title>
+  <meta name="author" content="Ben Woodall">
+
+  
+  <meta name="description" content="I was playing around in the Pry source code and found a mountain of fun stuffs! 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+pry(main)&gt; cohen-poem &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ben Woodall" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38526676-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ben Woodall</a></h1>
+  <h2>Last of the freelance hackers - Greatest sword fighter in the world</h2>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <!-- <li><a href="/resume">Resume</a></li> -->
+  <li><a href="/key">Key</a></li>
+</ul>
+<div class="social">
+  <a class="twitter" href="http://twitter.com/benwoodall" title="Twitter">Twitter</a>
+  <a class="github" href="https://github.com/benwoody" title="GitHub">GitHub</a>
+  <!-- <a class="coderwall" href="https://coderwall.com/benwoody" title="Coderwall">Coderwall</a> -->
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Pry Easter Eggs</h1>
+    
+  </header>
+
+
+
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/pry/'>pry</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+  
+</span>
+
+
+<div class="entry-content"><p>I was playing around in the Pry source code and found a mountain of fun stuffs!</p>
+
+<!-- more -->
+
+
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">cohen</span><span class="o">-</span><span class="n">poem</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">--</span>
+</span><span class='line'><span class="no">When</span> <span class="n">this</span> <span class="no">American</span> <span class="n">woman</span><span class="p">,</span>
+</span><span class='line'><span class="n">whose</span> <span class="n">thighs</span> <span class="n">are</span> <span class="n">bound</span> <span class="k">in</span> <span class="n">casual</span> <span class="n">red</span> <span class="n">cloth</span><span class="p">,</span>
+</span><span class='line'><span class="n">comes</span> <span class="n">thundering</span> <span class="n">past</span> <span class="n">my</span> <span class="n">sitting</span> <span class="n">place</span>
+</span><span class='line'><span class="n">like</span> <span class="n">a</span> <span class="n">forest</span><span class="o">-</span><span class="n">burning</span> <span class="no">Mongol</span> <span class="n">tribe</span><span class="p">,</span>
+</span><span class='line'><span class="n">the</span> <span class="n">city</span> <span class="n">is</span> <span class="n">ravished</span>
+</span><span class='line'><span class="ow">and</span> <span class="n">brittle</span> <span class="n">buildings</span> <span class="n">of</span> <span class="n">a</span> <span class="n">hundred</span> <span class="n">years</span>
+</span><span class='line'><span class="n">splash</span> <span class="n">into</span> <span class="n">the</span> <span class="n">street</span><span class="p">;</span>
+</span><span class='line'><span class="ow">and</span> <span class="n">my</span> <span class="n">eyes</span> <span class="n">are</span> <span class="n">burnt</span>
+</span><span class='line'><span class="k">for</span> <span class="n">the</span> <span class="n">embroidered</span> <span class="no">Chinese</span> <span class="n">girls</span><span class="p">,</span>
+</span><span class='line'><span class="n">already</span> <span class="n">old</span><span class="p">,</span>
+</span><span class='line'><span class="ow">and</span> <span class="n">so</span> <span class="n">small</span> <span class="n">between</span> <span class="n">the</span> <span class="n">thin</span> <span class="n">pines</span>
+</span><span class='line'><span class="n">on</span> <span class="n">these</span> <span class="n">enormous</span> <span class="n">landscapes</span><span class="p">,</span>
+</span><span class='line'><span class="n">that</span> <span class="k">if</span> <span class="n">you</span> <span class="n">turn</span> <span class="n">your</span> <span class="n">head</span>
+</span><span class='line'><span class="n">they</span> <span class="n">are</span> <span class="n">lost</span> <span class="k">for</span> <span class="n">hours</span><span class="o">.</span>
+</span><span class='line'>                  <span class="o">--</span> <span class="no">Leonard</span> <span class="no">Cohen</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">east</span><span class="o">-</span><span class="n">coker</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">--</span>
+</span><span class='line'><span class="no">Now</span> <span class="n">the</span> <span class="n">light</span> <span class="n">falls</span>
+</span><span class='line'><span class="no">Across</span> <span class="n">the</span> <span class="nb">open</span> <span class="n">field</span><span class="p">,</span> <span class="n">leaving</span> <span class="n">the</span> <span class="n">deep</span> <span class="n">lane</span>
+</span><span class='line'><span class="no">Shuttered</span> <span class="n">with</span> <span class="n">branches</span><span class="p">,</span> <span class="n">dark</span> <span class="k">in</span> <span class="n">the</span> <span class="n">afternoon</span><span class="p">,</span>
+</span><span class='line'><span class="no">Where</span> <span class="n">you</span> <span class="n">lean</span> <span class="n">against</span> <span class="n">a</span> <span class="n">bank</span> <span class="k">while</span> <span class="n">a</span> <span class="n">van</span> <span class="n">passes</span><span class="p">,</span>
+</span><span class='line'><span class="no">And</span> <span class="n">the</span> <span class="n">deep</span> <span class="n">lane</span> <span class="n">insists</span> <span class="n">on</span> <span class="n">the</span> <span class="n">direction</span>
+</span><span class='line'><span class="no">Into</span> <span class="n">the</span> <span class="n">village</span><span class="p">,</span> <span class="k">in</span> <span class="n">the</span> <span class="n">electric</span> <span class="n">heat</span>
+</span><span class='line'><span class="no">Hypnotised</span><span class="o">.</span> <span class="no">In</span> <span class="n">a</span> <span class="n">warm</span> <span class="n">haze</span> <span class="n">the</span> <span class="n">sultry</span> <span class="n">light</span>
+</span><span class='line'><span class="no">Is</span> <span class="n">absorbed</span><span class="p">,</span> <span class="ow">not</span> <span class="n">refracted</span><span class="p">,</span> <span class="n">by</span> <span class="n">grey</span> <span class="n">stone</span><span class="o">.</span>
+</span><span class='line'><span class="no">The</span> <span class="n">dahlias</span> <span class="nb">sleep</span> <span class="k">in</span> <span class="n">the</span> <span class="n">empty</span> <span class="n">silence</span><span class="o">.</span>
+</span><span class='line'><span class="no">Wait</span> <span class="k">for</span> <span class="n">the</span> <span class="n">early</span> <span class="n">owl</span><span class="o">.</span>
+</span><span class='line'><span class="o">--</span> <span class="n">T</span><span class="o">.</span><span class="n">S</span> <span class="no">Eliot</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">get</span><span class="o">-</span><span class="n">naked</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">--</span>
+</span><span class='line'><span class="no">We</span> <span class="n">dont</span> <span class="n">have</span> <span class="n">to</span> <span class="n">take</span> <span class="n">our</span> <span class="n">clothes</span> <span class="n">off</span> <span class="n">to</span> <span class="n">have</span> <span class="n">a</span> <span class="n">good</span> <span class="n">time</span><span class="o">.</span>
+</span><span class='line'><span class="no">We</span> <span class="n">could</span> <span class="n">dance</span> <span class="o">&amp;</span> <span class="n">party</span> <span class="n">all</span> <span class="n">night</span> <span class="no">And</span> <span class="n">drink</span> <span class="n">some</span> <span class="n">cherry</span> <span class="n">wine</span><span class="o">.</span>
+</span><span class='line'><span class="o">--</span> <span class="no">Jermaine</span> <span class="no">Stewart</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and my favorite:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">nyan</span><span class="o">-</span><span class="n">cat</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ben Woodall</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-13T12:09:00-08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2012</time>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs/" data-via="benwoodall" data-counturl="http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/04/osx-rspec-autotest-notifications/" title="Previous Post: OSX Rspec Autotest Notifications">&laquo; OSX Rspec Autotest Notifications</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/12/21/github-smileys-for-pidgin/" title="Next Post: Github Smileys for Pidgin">Github Smileys for Pidgin &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/03/24/copying-and-pasting-between-os-x-and-vim/">Copying and Pasting between OS X and Vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/20/validating-rest-queries-with-rails/">Validating REST queries with Rails</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/18/go-learn/">Go Learn</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/24/setup-for-remote-pairing/">Setup for Remote Pairing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/14/a-bit-more-git/">A Bit More Git</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+<a class="twitter-timeline"  href="https://twitter.com/benwoodall"  data-widget-id="337940470082703361">Tweets by @benwoodall</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Ben Woodall -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'benwoodall';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs/';
+        var disqus_url = 'http://benwoody.github.com/blog/2012/12/13/pry-easter-eggs/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/aharris.js"></script>
+
+</body>
+</html>

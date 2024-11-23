@@ -1,0 +1,21 @@
+body {
+   color: black;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+a:visited {
+      text-decoration: none;
+}
+
+a:active {
+      text-decoration: none;
+}

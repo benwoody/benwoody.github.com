@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://benwoody.github.com/sitemap.xml 

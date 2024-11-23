@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Installing Ruby 2.0.0-rc2 on OSX - Ben Woodall</title>
+  <meta name="author" content="Ben Woodall">
+
+  
+  <meta name="description" content="This took me WAY too long to figure out, but it seems like a LOT of people have trouble installing ruby-2.0.0 on OSX. I assumed installing 2.0.0-rc2 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://benwoody.github.com/blog/2013/02/12/installing-ruby-2-dot-0-0-rc2-on-osx">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Ben Woodall" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38526676-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Ben Woodall</a></h1>
+  <h2>Last of the freelance hackers - Greatest sword fighter in the world</h2>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <!-- <li><a href="/resume">Resume</a></li> -->
+  <li><a href="/key">Key</a></li>
+</ul>
+<div class="social">
+  <a class="twitter" href="http://twitter.com/benwoodall" title="Twitter">Twitter</a>
+  <a class="github" href="https://github.com/benwoody" title="GitHub">GitHub</a>
+  <!-- <a class="coderwall" href="https://coderwall.com/benwoody" title="Coderwall">Coderwall</a> -->
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Installing Ruby 2.0.0-rc2 on OSX</h1>
+    
+  </header>
+
+
+
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>
+  
+</span>
+
+
+<div class="entry-content"><p>This took me WAY too long to figure out, but it seems like a LOT of people have trouble installing ruby-2.0.0 on OSX.</p>
+
+<!-- more -->
+
+
+<p>I assumed installing 2.0.0-rc2 would be easy using rbenv:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rbenv install 2.0.0-rc2
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But it didn&rsquo;t turn out that easy:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Downloading openssl-1.0.1e.tar.gz...
+</span><span class='line'>-&gt; https://www.openssl.org/source/openssl-1.0.1e.tar.gz
+</span><span class='line'>Installing openssl-1.0.1e...
+</span><span class='line'>
+</span><span class='line'>BUILD FAILED
+</span><span class='line'>
+</span><span class='line'>Inspect or clean up the working tree at /var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481
+</span><span class='line'>Results logged to /var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481.log
+</span><span class='line'>
+</span><span class='line'>Last 10 log lines:
+</span><span class='line'>x openssl-1.0.1e/VMS/TODO
+</span><span class='line'>x openssl-1.0.1e/VMS/ucx_shr_decc_log.opt
+</span><span class='line'>x openssl-1.0.1e/VMS/ucx_shr_decc.opt
+</span><span class='line'>x openssl-1.0.1e/VMS/ucx_shr_vaxc.opt
+</span><span class='line'>x openssl-1.0.1e/VMS/VMSify-conf.pl
+</span><span class='line'>x openssl-1.0.1e/VMS/WISHLIST.TXT
+</span><span class='line'>/var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481/openssl-1.0.1e /var/folders/cy/yn06vn5j6psfz7y2q83xqd7c0000gn/T/ruby-build.20130212134232.22481 ~
+</span><span class='line'>Operating system: i686-apple-darwinDarwin Kernel Version 12.2.0: Sat Aug 25 00:48:52 PDT 2012; root:xnu-2050.18.24~1/RELEASE_X86_64
+</span><span class='line'>Configuring <span class="k">for </span>darwin64-x86_64-cc
+</span><span class='line'>Usage: Configure <span class="o">[</span>no-&lt;cipher&gt; ...<span class="o">]</span> <span class="o">[</span><span class="nb">enable</span>-&lt;cipher&gt; ...<span class="o">]</span> <span class="o">[</span>experimental-&lt;cipher&gt; ...<span class="o">]</span> <span class="o">[</span>-Dxxx<span class="o">]</span> <span class="o">[</span>-lxxx<span class="o">]</span> <span class="o">[</span>-Lxxx<span class="o">]</span> <span class="o">[</span>-fxxx<span class="o">]</span> <span class="o">[</span>-Kxxx<span class="o">]</span> <span class="o">[</span>no-hw-xxx|no-hw<span class="o">]</span> <span class="o">[[</span>no-<span class="o">]</span>threads<span class="o">]</span> <span class="o">[[</span>no-<span class="o">]</span>shared<span class="o">]</span> <span class="o">[[</span>no-<span class="o">]</span>zlib|zlib-dynamic<span class="o">]</span> <span class="o">[</span>no-asm<span class="o">]</span> <span class="o">[</span>no-dso<span class="o">]</span> <span class="o">[</span>no-krb5<span class="o">]</span> <span class="o">[</span>sctp<span class="o">]</span> <span class="o">[</span>386<span class="o">]</span> <span class="o">[</span>--prefix<span class="o">=</span>DIR<span class="o">]</span> <span class="o">[</span>--openssldir<span class="o">=</span>OPENSSLDIR<span class="o">]</span> <span class="o">[</span>--with-xxx<span class="o">[=</span>vvv<span class="o">]]</span> <span class="o">[</span>--test-sanity<span class="o">]</span> os/compiler<span class="o">[</span>:flags<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Some googleing turned up this issue for rbenv, <a href="https://github.com/sstephenson/ruby-build/issues/288">https://github.com/sstephenson/ruby-build/issues/288</a>, which shows the issue being a problem with version of OpenSSL installed on Mountain Lion.</p>
+
+<p>So I tried the suggested</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RUBY_CONFIGURE_OPTS=--with-openssl-dir=`brew --prefix openssl` rbenv install 2.0.0-rc2</span></code></pre></td></tr></table></div></figure>
+
+
+<p>AND</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CONFIGURE_OPTS=--with-openssl-dir=`brew --prefix openssl` rbenv install 2.0.0-rc2</span></code></pre></td></tr></table></div></figure>
+
+
+<p>AFTER I had used brew to install/upgrade the newest version of OpenSSL.  NOTHING WORKED.  SAME ERROR.</p>
+
+<p>Problem?  It seemed to be an issue with the most current version of rbenv/ruby-build used with brew.  So I had to uninstall both from brew and use the git-clone method instead, giving me the newest version.</p>
+
+<p>Installing with</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>RUBY_CONFIGURE_OPTS=--with-openssl-dir=`brew --prefix openssl` rbenv install 2.0.0-rc2</span></code></pre></td></tr></table></div></figure>
+
+
+<p>worked just fine after that.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ben Woodall</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-12T16:35:00-08:00" pubdate data-updated="true">Feb 12<span>th</span>, 2013</time>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://benwoody.github.com/blog/2013/02/12/installing-ruby-2-dot-0-0-rc2-on-osx/" data-via="benwoodall" data-counturl="http://benwoody.github.com/blog/2013/02/12/installing-ruby-2-dot-0-0-rc2-on-osx/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/21/github-smileys-for-pidgin/" title="Previous Post: Github Smileys for Pidgin">&laquo; Github Smileys for Pidgin</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/02/14/a-bit-more-git/" title="Next Post: A Bit More Git">A Bit More Git &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/03/24/copying-and-pasting-between-os-x-and-vim/">Copying and Pasting between OS X and Vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/20/validating-rest-queries-with-rails/">Validating REST queries with Rails</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/18/go-learn/">Go Learn</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/24/setup-for-remote-pairing/">Setup for Remote Pairing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/14/a-bit-more-git/">A Bit More Git</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+<a class="twitter-timeline"  href="https://twitter.com/benwoodall"  data-widget-id="337940470082703361">Tweets by @benwoodall</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Ben Woodall -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'benwoodall';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://benwoody.github.com/blog/2013/02/12/installing-ruby-2-dot-0-0-rc2-on-osx/';
+        var disqus_url = 'http://benwoody.github.com/blog/2013/02/12/installing-ruby-2-dot-0-0-rc2-on-osx/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/aharris.js"></script>
+
+</body>
+</html>
