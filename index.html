@@ -72,7 +72,7 @@
         }
       })
       window.onload = function() {
-        var preferDark = window.localStorage.getItem("preferDark");
+        var preferDark = +window.localStorage.getItem("preferDark");
         document.body.classList.add('dark', preferDark); // localStorage.getItem('darkmode') === 'true');
       }
     </script>
