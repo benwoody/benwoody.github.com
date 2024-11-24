@@ -65,10 +65,10 @@
       checkbox.addEventListener("change", () => {
         if (+window.localStorage.getItem("preferDark") == 0) {
           window.localStorage.setItem("preferDark", 1);
-          document.body.classList.toggle("dark")
+          document.body.classList.add("dark")
         } else {
           window.localStorage.setItem("preferDark", 0);
-          document.body.classList.toggle("dark")
+          document.body.classList.remove("dark")
         }
       })
       function onload() {
