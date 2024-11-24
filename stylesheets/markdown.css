@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body {
-   color: black;
+  color: black;
   transition: background 0.2s linear;
 }
 
 * {box-sizing: border-box;}
 
-body.dark {background-color: #292c35;} /* #9b59b6 */
+body.dark {background-color: #292c35; color: #fff} /* #9b59b6 */
 
 body.dark h1, body.dark .support a {color: #fff;}
 
@@ -40,12 +40,7 @@ a[target="_blank"]::after {
 }
 
 .checkbox-label {
-  background-color: #111;
-  width: 50px;
-  height: 26px;
-  border-radius: 50px;
-  position: relative;
-  padding: 5px;
+  background-color: #FFF;
 }
 
 .checkbox:checked + .checkbox-label .ball {
