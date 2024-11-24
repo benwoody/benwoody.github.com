@@ -26,6 +26,16 @@ body.dark a:active {
   text-decoration: none;
 }
 
+body.dark .checkbox-label {
+  background-color: #292c35;
+}
+
+a[target="_blank"]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  img{hue-rotate(90deg);
+  margin: 0 3px 0 5px;
+}
+
 a {
   color: #000;
   text-decoration: none;
