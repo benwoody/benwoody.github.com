@@ -34,6 +34,10 @@ body.dark {background-color: #292c35; color: #fff} /* #9b59b6 */
 
 body.dark h1, body.dark .support a {color: #fff;}
 
+body.dark a {
+  color: #fff;
+}
+
 body.dark a:hover {
   color: #fff;
   text-decoration: underline;
