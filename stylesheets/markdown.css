@@ -63,7 +63,6 @@ body.dark a[target="_blank"]::after {
 .checkbox {
   opacity: 0;
   position: absolute;
-  display: none;
 }
 
 .checkbox-label {
