@@ -2,7 +2,7 @@
 
 body {
   color: black;
-  transition: background 0.2s linear;
+  transition: background linear;
 }
 
 * {box-sizing: border-box;}
