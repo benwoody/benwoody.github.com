@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); */
 
 body {
   color: black;
-  transition: background linear;
+  /* transition: background linear; */
 }
 
 * {box-sizing: border-box;}
@@ -76,7 +76,8 @@ body.dark a[target="_blank"]::after {
 .checkbox-label {
   background-color: #FFF;
 }
-
+/*
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
+*/
