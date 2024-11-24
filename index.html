@@ -63,11 +63,11 @@
     <script>
       const checkbox = document.getElementById("checkbox")
       checkbox.addEventListener("change", () => {
-        if (+window.localStorage.getItem("preferDark")) {
-          window.localStorage.setItem("preferDark", 0);
+        if (+window.localStorage.getItem("preferDark" == 0)) {
+          window.localStorage.setItem("preferDark", 1);
           document.body.classList.toggle("dark")
         } else {
-          window.localStorage.setItem("preferDark", 1);
+          window.localStorage.setItem("preferDark", 0);
           document.body.classList.toggle("dark")
         }
       })
