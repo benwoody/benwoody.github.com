@@ -62,8 +62,17 @@
     </h4>
     <script>
       const checkbox = document.getElementById("checkbox")
-      checkbox.addEventListener("change", () => {
-        document.body.classList.toggle("dark")
+      checkbox.addeventlistener("change", (e) => {
+        if (e.target.checked) {
+          document.body.classList.toggle("dark")
+          toggleSwitch.checked = true;
+          localStorage.setItem('body', 'dark');
+        }
+        else {
+          document.body.classList.toggle("dark")
+          toggleSwitch.checked = false;
+          localStorage.setItem('body', '');
+        }
       })
     </script>
   </body>
