@@ -41,12 +41,10 @@ body.dark a:hover {
 
 body.dark a:visited {
   color: #fff;
-  text-decoration: none;
 }
 
 body.dark a:active {
   color: #fff;
-  text-decoration: none;
 }
 
 body.dark .checkbox-label {
