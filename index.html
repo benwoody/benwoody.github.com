@@ -54,6 +54,20 @@
       <li>Telephones / Phone Phreaking</li>
     </ul>
     <hr>
-    <h4><<a href="markdown/">View Markdown</a>> <<a href="resume/">View Resume</a>></h4>
+    <h4><<a href="markdown/">View Markdown</a>> | <<a href="resume/">View Resume</a>> | <light / dark ></h4>
+    <div>
+      <input type="checkbox" class="checkbox" id="checkbox">
+      <label for="checkbox" class="checkbox-label">
+        <i>dark</i>
+        <i>light</i>
+        <span class="ball">*</span>
+      </label>
+    </div>
+    <script>
+      const checkbox = document.getElementById("checkbox")
+      checkbox.addEventListener("change", () => {
+        document.body.classList.toggle("dark")
+      })
+    </script>
   </body>
 </html>
