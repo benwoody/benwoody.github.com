@@ -65,12 +65,12 @@
       checkbox.addeventlistener("change", () => {
         if (checkbox.checked) {
           document.body.classList.toggle("dark")
-          toggleSwitch.checked = true;
+          toggleSwitch.checked = false;
           localStorage.setItem('body', 'dark');
         }
         else {
           document.body.classList.toggle("dark")
-          toggleSwitch.checked = false;
+          toggleSwitch.checked = true;
           localStorage.setItem('body', '');
         }
       })
