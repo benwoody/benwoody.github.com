@@ -71,6 +71,9 @@
           document.body.classList.toggle("dark")
         }
       })
+      function onload() {
+        document.body.classList.toggle('dark', !preferDark); // localStorage.getItem('darkmode') === 'true');
+      }
     </script>
   </body>
 </html>
