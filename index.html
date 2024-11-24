@@ -64,11 +64,11 @@
       const checkbox = document.getElementById("checkbox")
       checkbox.addEventListener("change", () => {
         if (+window.localStorage.getItem("preferDark") == 0) {
-          window.localStorage.setItem("preferDark", 1);
-          document.body.classList.add("dark")
-        } else {
-          window.localStorage.setItem("preferDark", 0);
           document.body.classList.remove("dark")
+          window.localStorage.setItem("preferDark", 1);
+        } else {
+          document.body.classList.add("dark")
+          window.localStorage.setItem("preferDark", 0);
         }
       })
       window.onload = function() {
