@@ -66,6 +66,7 @@
   let onpageLoad = localStorage.getItem("theme") || "dark";
   let element = document.body;
   element.classList.add(onpageLoad);
+  element.classList.toggle("dark");
 })();
 
 function themeToggle() {
