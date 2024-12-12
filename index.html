@@ -11,7 +11,7 @@
 
     <link rel="canonical" href="http://benwoody.github.com">
     <link href="/images/favicon.ico" rel="icon">
-    <link href="/stylesheets/markdown.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="stylesheets/markdown.css" media="screen, projection" rel="stylesheet" type="text/css">
   </head>
 
   <body>
@@ -65,8 +65,8 @@
       // On page load set the theme.
       (function() {
         let element = document.body;
-        let theme = localStorage.getItem("theme") || "";
-        let onpageLoad = localStorage.getItem("theme") || "dark";
+        let theme = localStorage.getItem("theme");
+        let onpageLoad = localStorage.getItem("theme");
         element.classList.toggle(theme);
         element.classList.add(onpageLoad);
       })();
