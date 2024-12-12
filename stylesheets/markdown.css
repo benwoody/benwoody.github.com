@@ -1,8 +1,9 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap"); */
 
 body {
+  background-color: #fff;
   color: black;
-  transition: background 0.3s linear;
+  transition: background 0.1s linear;
 }
 
 * {box-sizing: border-box;}
@@ -33,7 +34,7 @@ a[target="_blank"]::after {
 body.dark {
   background-color: #292c35;
   color: #fff;
-  transition: 0.3s linear;
+  transition: 0s linear;
 } /* #9b59b6 */
 
 body.dark h1, body.dark .support a {color: #fff;}
