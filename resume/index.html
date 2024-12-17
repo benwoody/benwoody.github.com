@@ -121,6 +121,33 @@
       <li>Other: Solidity, Rust, Python, Snowflake, ERC-20</li>
     </ul>
     <hr>
-    <h4><<a href="/">Back</a>></h4>
+    <h4><<a href="/">Back</a>> | 
+    <input type="checkbox" class="checkbox" id="checkbox" style="display:none;">
+    <label for="checkbox" onclick="themeToggle()" class="checkbox-label">
+      &lt;<a>Change Mood</a>&gt;
+    </label>
+    </h4>
+    <script>
+      // On page load set the theme.
+      (function() {
+        let element = document.body;
+        let theme = localStorage.getItem("theme");
+        let onpageLoad = localStorage.getItem("theme");
+        element.classList.toggle(theme);
+        element.classList.add(onpageLoad);
+      })();
+
+      function themeToggle() {
+        let element = document.body;
+        element.classList.toggle("dark");
+
+        let theme = localStorage.getItem("theme");
+        if (theme && theme === "dark") {
+          localStorage.setItem("theme", "");
+        } else {
+          localStorage.setItem("theme", "dark");
+        }
+      }
+    </script>
   </body>
 </html>
