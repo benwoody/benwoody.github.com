@@ -80,6 +80,7 @@ body.dark a[target="_blank"]::after {
 
 .checkbox-label {
   background-color: #FFF;
+  cursor: pointer;
 }
 /*
 .checkbox:checked + .checkbox-label .ball {
