@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Ben_Woodall.markdown</title>
@@ -11,7 +11,9 @@
 
     <link rel="canonical" href="http://benwoody.github.com">
     <link href="/images/favicon.ico" rel="icon">
-    <link href="/stylesheets/markdown.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/markdown.css" media="screen" rel="stylesheet" type="text/css">
+
+    <script src="/javascripts/mood.js"></script>
   </head>
   <body>
     <pre>
@@ -61,37 +63,15 @@
 
 ---
 
+</pre>
 <div style="white-space:normal;">
 &lt;<a href="/">View HTML</a>&gt; | 
-<label for="checkbox" onclick="themeToggle()" class="checkbox-label">
+<label onclick="themeToggle()" class="checkbox-label">
   &lt;<a>Change Mood</a>&gt;
 </label>
 </div>
 
 Best viewed with <a href="https://lynx.invisible-island.net" target=_blank>Lynx Browser</a>
 &copy; 2025 benwoodall.com. All rights reserved.
-</pre>
-    <script>
-      // On page load set the theme.
-      (function() {
-        let element = document.body;
-        let theme = localStorage.getItem("theme");
-        let onpageLoad = localStorage.getItem("theme");
-        element.classList.toggle(theme);
-        element.classList.add(onpageLoad);
-      })();
-
-      function themeToggle() {
-        let element = document.body;
-        element.classList.toggle("dark");
-
-        let theme = localStorage.getItem("theme");
-        if (theme && theme === "dark") {
-          localStorage.setItem("theme", "");
-        } else {
-          localStorage.setItem("theme", "dark");
-        }
-      }
-    </script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: 
+Disallow:
 
-Sitemap: http://benwoody.github.com/sitemap.xml 
+Sitemap: https://benwoody.github.com/sitemap.xml
+Sitemap: https://benwoodall.com/sitemap.xml
