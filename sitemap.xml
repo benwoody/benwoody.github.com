@@ -1,19 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
-    <url>
-        <loc>https://benwoody.github.com/</loc>
-        <lastmod>2025-01-20T15:11:55-07:00</lastmod>
-    </url>
-    <url>
-      <loc>https://benwoody.github.com/markdown/</loc>
-        <lastmod>2025-01-20T15:11:55-07:00</lastmod>
-    </url>
-    <url>
-      <loc>https://benwoody.github.com/key/</loc>
-        <lastmod>2025-01-20T15:11:55-07:00</lastmod>
-    </url>
-    <url>
-        <loc>https://benwoody.github.com/robots.txt</loc>
-        <lastmod>2025-01-20T07:51:41-07:00</lastmod>
-    </url>
+  <url>
+    <loc>https://benwoodall.com/</loc>
+    <lastmod>2025-01-20T20:26:02+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://benwoodall.com/markdown/</loc>
+    <lastmod>2025-01-20T20:26:02+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://benwoodall.com/key/</loc>
+    <lastmod>2025-01-20T20:26:02+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
