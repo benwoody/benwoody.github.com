@@ -4,6 +4,14 @@ body {
   background-color: #fff;
   color: black;
   transition: background 0.1s linear;
+  min-height:100%;
+  position:relative;
+
+  /* fallback height */
+  min-height:100vh;
+
+  /* new small viewport height for modern browsers */
+  min-height:100svh;
 }
 
 * {box-sizing: border-box;}
@@ -19,9 +27,14 @@ body {
   font-weight: bold;
 }
 
+main {
+  padding-bottom: 4em; /* Height of the footer element */
+}
+
 footer {
+  height: 1em;
   position: absolute;
-  bottom: 0;
+  bottom: 4em;
 }
 
 a {
