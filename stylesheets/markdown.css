@@ -8,6 +8,22 @@ body {
 
 * {box-sizing: border-box;}
 
+#subheader {
+  all: unset;
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -74,7 +90,6 @@ body.dark a[target="_blank"]::after {
   margin: 0 3px 0 5px;
 }
 
-
 .checkbox {
   opacity: 0;
   position: absolute;
@@ -83,8 +98,4 @@ body.dark a[target="_blank"]::after {
 .checkbox-label {
   background-color: #FFF;
 }
-/*
-.checkbox:checked + .checkbox-label .ball {
-  transform: translateX(24px);
-}
-*/
+
