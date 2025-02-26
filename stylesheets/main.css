@@ -15,6 +15,10 @@ body {
 
 * {box-sizing: border-box;}
 
+header {
+  text-align: center;
+}
+
 #subheader {
   all: unset;
   display: block;
@@ -90,6 +94,10 @@ blockquote.code {
     margin-left: 15em;
   }
 
+  header {
+    text-align: left;
+  }
+
   #nav {
     margin-left: -15em;
     padding-left: 1.8em;
@@ -99,6 +107,10 @@ blockquote.code {
     overflow: auto;
     height: 100%;
   }
+}
+
+#nav {
+  text-align: left;
 }
 
 #nav a {
