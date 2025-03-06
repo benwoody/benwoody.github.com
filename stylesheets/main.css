@@ -31,7 +31,7 @@ header {
 }
 
 main {
-  padding-bottom: 80px;
+  padding-bottom: 110px;
 }
 
 h3 {
@@ -48,8 +48,8 @@ main span.callsign {
 
 footer {
   position: absolute;
-  height: 100px;
-  bottom: 0;
+  height: 130px;
+  bottom: 0px;
 }
 
 a {
