@@ -42,8 +42,12 @@ main p {
   margin-left: 1.8em;
 }
 
-main ul {
+main li {
   margin-left: 0.8em;
+}
+
+main li li {
+  margin-left: -0.8em;
 }
 
 main span.callsign {
