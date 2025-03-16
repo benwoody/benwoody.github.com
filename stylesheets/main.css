@@ -42,6 +42,10 @@ main p {
   margin-left: 1.8em;
 }
 
+main ul {
+  margin-left: 1.8em;
+}
+
 main span.callsign {
   font-family: monaco,Consolas,Lucida Console,monospace;
 }
