@@ -13,6 +13,18 @@ body {
   min-height:100svh;
 }
 
+.imgbox {
+  display: grid;
+  height: 100%;
+}
+
+.center-fit {
+  text-align: center;
+  margin-left: 15em;
+  max-height: 100%;
+  max-width: 60%;
+}
+
 * {box-sizing: border-box;}
 
 header {
@@ -40,14 +52,6 @@ h3 {
 
 main p {
   margin-left: 1.8em;
-}
-
-main li {
-  margin-left: 0.8em;
-}
-
-main li li {
-  margin-left: -0.8em;
 }
 
 main span.callsign {
@@ -104,6 +108,18 @@ blockquote.code {
 
   header {
     text-align: left;
+  }
+
+  .imgbox {
+    display: grid;
+    height: 100%;
+  }
+
+  .center-fit {
+    margin-top: 2.3em;
+    margin-left: -7.2em;
+    max-height: 100%;
+    max-width: 100%;
   }
 
   #nav {
